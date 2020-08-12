@@ -1,0 +1,171 @@
+* {
+  /* font-family: monospace; */
+ 	font-family: 'Red Hat Display', sans-serif;
+  /* font-family: 'Lexend Deca', sans-serif; */
+  font-size: 18px;
+}
+
+body {
+  background-color: white;
+  transition: 0.2s;
+}
+
+body.dark-mode {
+  background-color: black;
+  transition: 0.2s;
+}
+
+#app {
+  /* position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); */
+
+  margin: 4%;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  background-color: white;
+  transition: 0.2s;
+}
+
+#app.dark-mode {
+  background-color: black;
+  transition: 0.2s;
+}
+
+#app h1 {
+  /* margin-top: 2%; */
+  margin-bottom: 2%;
+  font-size: 24px;
+  text-align: center;
+  transition: 0.2s;
+}
+
+#app h1.dark-mode {
+  color: lightgray;
+  transition: 0.2s;
+}
+
+#app a {
+  background-color: #eeeeee;
+  font-size: 16px;
+  font-weight: lighter;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+/* #app a.dark-mode {
+  background-color: #dddddd;
+  transition: 0.2s;
+} */
+
+#app ul {
+  background-color: lightgray;
+  /* margin: 15px 5px; */
+  margin: 15px auto;
+  padding: 0;
+  border-radius: 8px;
+  font-weight: bold;
+  /* text-align: center; */
+  color: black;
+  transition: 0.2s;
+}
+
+#app ul.dark-mode {
+  background-color: gray;
+  transition: 0.2s;
+}
+
+#app li {
+  background: #f0f0f0;
+  /* border-radius: 0 8px 8px 0; */
+  border-radius: 8px;
+  margin: 5px;
+  padding: 10px;
+  font-size: 18px;
+  font-weight: 550;
+  line-height: 1.5em;
+  list-style-type: none;
+  transition: 0.2s;
+}
+
+/* #app li.dark-mode {
+  background: #dddddd;
+  transition: 0.2s;
+} */
+
+#app input {
+  margin: 20px auto;
+  width: 12rem;
+  padding: 8px;  
+  text-align: center;
+  border-radius: 8px;
+  transition: 0.2s;
+}
+
+textarea:focus, input:focus {
+  outline: none;
+}
+
+#app input.dark-mode {
+  background-color: black;
+  color: #e2e2e2;
+  border-color: gray;
+  transition: 0.2s;
+}
+
+::placeholder {
+  text-align: center;
+  transition: 0.2s;
+}
+
+#app button#add {
+  display: none;
+}
+
+#app #keepgoing {
+  margin: 15px auto;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 400;
+  color: black;
+  transition: 0.2s;
+}
+
+#app #keepgoing.dark-mode {
+  color: lightgray;
+  transition: 0.2s;
+}
+
+#app #onfire {
+  margin: 10px auto;
+  /* margin-top: 5px; */
+  text-align: center;
+  font-size: 24px;
+  transition: 0.2s;
+}
+
+#app button#mode {
+  margin: 3% auto 2%;
+  background-color: #e2e2e2;
+  display: flex;
+  align-self: center;
+  font-size: 14px;
+  border-style: none;
+  outline-style: none;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+#app button#mode.dark-mode {
+  background-color: #302f2f;
+  color: gray;
+  transition: 0.2s;
+}
