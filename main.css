@@ -10,7 +10,7 @@ body {
   transition: 0.2s;
 }
 
-body.dark-mode {
+body.dark-theme {
   background-color: black;
   transition: 0.2s;
 }
@@ -33,12 +33,12 @@ body.dark-mode {
   transition: 0.2s;
 }
 
-#app.dark-mode {
+#app.dark-theme {
   background-color: black;
   transition: 0.2s;
 }
 
-#app h1 {
+.title {
   /* margin-top: 2%; */
   margin-bottom: 2%;
   font-size: 24px;
@@ -46,12 +46,12 @@ body.dark-mode {
   transition: 0.2s;
 }
 
-#app h1.dark-mode {
+.title.dark-theme {
   color: lightgray;
   transition: 0.2s;
 }
 
-#app a {
+.link-element {
   background-color: #eeeeee;
   font-size: 16px;
   font-weight: lighter;
@@ -59,12 +59,12 @@ body.dark-mode {
   transition: 0.2s;
 }
 
-/* #app a.dark-mode {
+/* a.dark-theme {
   background-color: #dddddd;
   transition: 0.2s;
 } */
 
-#app ul {
+.todo-list {
   background-color: lightgray;
   /* margin: 15px 5px; */
   margin: 15px auto;
@@ -76,14 +76,13 @@ body.dark-mode {
   transition: 0.2s;
 }
 
-#app ul.dark-mode {
+.todo-list.dark-theme {
   background-color: gray;
   transition: 0.2s;
 }
 
-#app li {
+.todo-element {
   background: #f0f0f0;
-  /* border-radius: 0 8px 8px 0; */
   border-radius: 8px;
   margin: 5px;
   padding: 10px;
@@ -94,25 +93,21 @@ body.dark-mode {
   transition: 0.2s;
 }
 
-/* #app li.dark-mode {
-  background: #dddddd;
-  transition: 0.2s;
-} */
-
-#app input {
+input {
   margin: 20px auto;
   width: 12rem;
   padding: 8px;  
   text-align: center;
   border-radius: 8px;
   transition: 0.2s;
+  cursor: pointer;
 }
 
 textarea:focus, input:focus {
   outline: none;
 }
 
-#app input.dark-mode {
+input.dark-theme {
   background-color: black;
   color: #e2e2e2;
   border-color: gray;
@@ -124,11 +119,11 @@ textarea:focus, input:focus {
   transition: 0.2s;
 }
 
-#app button#add {
+.add-todo {
   display: none;
 }
 
-#app #keepgoing {
+.motivational-phrase {
   margin: 15px auto;
   text-align: center;
   font-size: 16px;
@@ -137,20 +132,20 @@ textarea:focus, input:focus {
   transition: 0.2s;
 }
 
-#app #keepgoing.dark-mode {
+.motivational-phrase.dark-theme {
   color: lightgray;
   transition: 0.2s;
 }
 
-#app #onfire {
+.emoji-run-element {
   margin: 10px auto;
-  /* margin-top: 5px; */
   text-align: center;
   font-size: 24px;
   transition: 0.2s;
+  transform: scale(-1, 1);
 }
 
-#app button#mode {
+.theme-selector {
   margin: 3% auto 2%;
   background-color: #e2e2e2;
   display: flex;
@@ -164,8 +159,12 @@ textarea:focus, input:focus {
   transition: 0.2s;
 }
 
-#app button#mode.dark-mode {
+.theme-selector.dark-theme {
   background-color: #302f2f;
   color: gray;
   transition: 0.2s;
+}
+
+.select-none {
+  user-select: none;
 }

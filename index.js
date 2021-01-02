@@ -1,12 +1,9 @@
-// App de To-do
-if(localStorage.getItem('dark-mode') === 'enabled') {
-  setDarkMode();
-}
+var listElement = document.querySelector('.todo-list');
+var inputElement = document.querySelector('input');
+var addButtonElement = document.querySelector('.add-todo');
 
-
-var listElement = document.querySelector('#app ul');
-var inputElement = document.querySelector('#app input');
-var buttonElement = document.querySelector('#app button');
+inputElement.focus();
+inputElement.select();
 
 var todos = JSON.parse(localStorage.getItem('list_todos')) || [];
 
@@ -15,88 +12,85 @@ function renderTodos() {
 
   for (todo of todos) {
     var todoElement = document.createElement('li');
+    todoElement.classList.add('todo-element');
     var todoText = document.createTextNode(todo + ' ');
-    
+
     var linkElement = document.createElement('a');
     linkElement.setAttribute('href', '#');
+    linkElement.classList.add('link-element');
     var linkText = document.createTextNode('✅');
     linkElement.appendChild(linkText);
 
     var pos = todos.indexOf(todo);
-    linkElement.setAttribute('onclick', 'deleteTodo('+ pos +')');
+    linkElement.setAttribute('onclick', 'deleteTodo(' + pos + ')');
 
     todoElement.appendChild(todoText);
     todoElement.appendChild(linkElement);
 
     listElement.appendChild(todoElement);
-  };
-};
+  }
+}
 
 renderTodos();
 
 function addTodo() {
   var todoText = inputElement.value;
-    if (todoText === '') {
-      return false;
-    } else {
-      todos.push(todoText)
-    };
+  if (todoText === '') {
+    return false;
+  } else {
+    todos.push(todoText);
+  }
   inputElement.value = '';
 
   renderTodos();
   saveToStorage();
-};
+}
 
-buttonElement.onclick = addTodo;
+addButtonElement.onclick = addTodo;
 
 function enterAsClick(event) {
   if (event.keyCode === 13) {
     event.preventDefault(); // Cancel the default action, if needed
-    buttonElement.click(); // Trigger the button element with a click
+    addButtonElement.click(); // Trigger the button element with a click
   }
-};
+}
 
 inputElement.addEventListener('keyup', enterAsClick);
 
 function deleteTodo(pos) {
-  todos.splice(pos, 1); // remove, em uma posição, uma qnt de itens de um array
+  todos.splice(pos, 1);
   renderTodos();
   saveToStorage();
-};
+}
+
+function setDarkTheme() {
+  var body = document.querySelector('body'),
+    app = document.querySelector('#app'),
+    h1 = document.querySelector('.title'),
+    input = document.querySelector('input'),
+    motivational = document.querySelector('.motivational-phrase'),
+    emojiRun = document.querySelector('.emoji-run-element'),
+    themeButtonElement = document.querySelector('.theme-selector');
+
+  body.classList.toggle('dark-theme');
+  app.classList.toggle('dark-theme');
+  h1.classList.toggle('dark-theme');
+  input.classList.toggle('dark-theme');
+  motivational.classList.toggle('dark-theme');
+  emojiRun.classList.toggle('dark-theme');
+  themeButtonElement.classList.toggle('dark-theme');
+
+  if (app.classList.contains('dark-theme')) {
+    localStorage.setItem('dark-theme', 'enabled');
+  } else {
+    localStorage.setItem('dark-theme', 'disabled');
+  }
+}
+
+if (localStorage.getItem('dark-theme') === 'enabled') {
+  setDarkTheme();
+}
 
 function saveToStorage() {
   localStorage.setItem('list_todos', JSON.stringify(todos));
-};
-
-function setDarkMode() {
-  var body = document.querySelector('body'),
-  app = document.querySelector('#app'),
-  h1 = document.querySelector('#app h1'),
-  // a = document.querySelector('#app a'),
-  // ul = document.querySelector('#app ul'),
-  // li = document.querySelectorAll('#app li'),
-  input = document.querySelector('#app input'),
-  keepgoing = document.querySelector('#app #keepgoing'),
-  onfire = document.querySelector('#app #onfire'),
-  button = document.querySelector('#app button#mode');
-
-  body.classList.toggle("dark-mode");
-  app.classList.toggle("dark-mode");
-  h1.classList.toggle("dark-mode");
-  // a.classList.toggle("dark-mode");
-  // ul.classList.toggle("dark-mode");
-  // for (let i = 0; i < li.length; i++) {
-  //   li[i].classList.toggle("dark-mode")
-  //   };
-  input.classList.toggle("dark-mode");
-  keepgoing.classList.toggle("dark-mode");
-  onfire.classList.toggle("dark-mode");
-  button.classList.toggle("dark-mode");
-
-
-  if (app.classList.contains('dark-mode')) {
-    localStorage.setItem('dark-mode', 'enabled');
-  } else {
-    localStorage.setItem('dark-mode', 'disabled');
-  };
-};
+}

@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#000000" />
   <title>Get Done</title>
   <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
   <link rel="apple-touch-icon" sizes="180x180" href="favicon.png"/>
@@ -15,19 +16,19 @@
 
   <div id="app">
     
-    <h1>G E T &nbsp&nbsp D O N E</h1>
+    <h1 class="title select-none">G E T &nbsp&nbsp D O N E</h1>
 
-    <ul>
+    <ul class="todo-list">
     </ul>
 
-      <input type="text" placeholder="type in a to-do" required>
+    <input type="text" placeholder="type in a to-do" required>
 
-      <button id="add">Add</button>
+    <button class="add-todo">Add</button>
 
-    <p id="keepgoing">MOTIVATION gets you STARTED</br> ATTITUDE keeps you GOING</p>
-    <p id="onfire">🏃</p>
+    <p class="motivational-phrase select-none">MOTIVATION gets you STARTED</br> ATTITUDE keeps you GOING</p>
+    <p class="emoji-run-element select-none">🏃</p>
 
-    <button id="mode" onclick="setDarkMode()">dark/light</button>
+    <button class="theme-selector" onclick="setDarkTheme()">dark/light</button>
 
   </div>
 
