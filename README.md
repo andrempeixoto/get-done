@@ -1,5 +1,5 @@
 # GET DONE
-This my first JavaScript webapp. It is a To-Do list that was developed based on the Starter course of Rocketseat.
+This my first (Vanilla) JavaScript webapp. It is a To-Do list that was developed based on the Starter course of Rocketseat.
 
 It is hosted at [peixotodev.com/get-done](https://peixotodev.com/get-done) and it is free to use. The current version is 2.1.
 
