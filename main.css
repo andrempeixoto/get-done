@@ -1,35 +1,30 @@
 * {
-  /* font-family: monospace; */
- 	font-family: 'Red Hat Display', sans-serif;
-  /* font-family: 'Lexend Deca', sans-serif; */
+  font-family: 'Red Hat Display', sans-serif;
   font-size: 18px;
 }
 
 body {
   background-color: white;
   transition: 0.2s;
+  margin: 0;
 }
 
 body.dark-theme {
   background-color: black;
-  transition: 0.2s;
 }
 
 #app {
-  /* position: absolute;
-  top: 50%;
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-  left: 50%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%); */
-
-  margin: 4%;
-  padding: 5px;
   display: flex;
   flex-direction: column;
+  gap: 1rem;
+  min-height: calc(100vh - 2rem);
+  padding: 1rem;
   align-self: center;
   background-color: white;
+  transition: 0.2s;
+}
+
+#app * {
   transition: 0.2s;
 }
 
@@ -39,16 +34,12 @@ body.dark-theme {
 }
 
 .title {
-  /* margin-top: 2%; */
-  margin-bottom: 2%;
   font-size: 24px;
   text-align: center;
-  transition: 0.2s;
 }
 
 .title.dark-theme {
   color: lightgray;
-  transition: 0.2s;
 }
 
 .link-element {
@@ -56,7 +47,6 @@ body.dark-theme {
   font-size: 16px;
   font-weight: lighter;
   text-decoration: none;
-  transition: 0.2s;
 }
 
 /* a.dark-theme {
@@ -66,14 +56,11 @@ body.dark-theme {
 
 .todo-list {
   background-color: lightgray;
-  /* margin: 15px 5px; */
   margin: 15px auto;
   padding: 0;
   border-radius: 8px;
   font-weight: bold;
-  /* text-align: center; */
   color: black;
-  transition: 0.2s;
 }
 
 .todo-list.dark-theme {
@@ -82,54 +69,73 @@ body.dark-theme {
 }
 
 .todo-element {
-  background: #f0f0f0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  min-width: 14rem;
+  background-color: #f0f0f0;
   border-radius: 8px;
-  margin: 5px;
-  padding: 10px;
+  margin: .325rem;
+  padding: 0.5rem 0.75rem;
   font-size: 18px;
-  font-weight: 550;
-  line-height: 1.5em;
-  list-style-type: none;
-  transition: 0.2s;
+  font-weight: 600;
 }
 
-input {
-  margin: 20px auto;
-  width: 12rem;
-  padding: 8px;  
-  text-align: center;
-  border-radius: 8px;
-  transition: 0.2s;
+.check-element {
   cursor: pointer;
 }
 
-textarea:focus, input:focus {
+.input-container {
+  display: flex;
+  justify-content: center;
+}
+
+.input-container input {
+  width: 12rem;
+  padding: 0.5rem;
+  text-align: center;
+  border-radius: 0.5rem 0 0 0.5rem;
+  border-right: none;
+}
+
+textarea:focus,
+input:focus {
   outline: none;
 }
 
 input.dark-theme {
   background-color: black;
   color: #e2e2e2;
-  border-color: gray;
-  transition: 0.2s;
+  border-color: #808080;
 }
 
 ::placeholder {
   text-align: center;
-  transition: 0.2s;
 }
 
 .add-todo {
-  display: none;
+  background-color: #f0f0f0;
+  border-radius: 0 0.5rem 0.5rem 0;
+  padding: 0 0.5rem;
+  border: 2px solid;
+  border-style: inset inset inset none;
+  border-color: #212121 #212121 #808080;
+  cursor: pointer;
+}
+
+.add-todo.dark-theme {
+  background-color: #302f2f;
+  color: gray;
+  border-color: #808080 #2c2c2c #808080;
 }
 
 .motivational-phrase {
-  margin: 15px auto;
+  padding-top: 1rem;
   text-align: center;
   font-size: 16px;
   font-weight: 400;
   color: black;
-  transition: 0.2s;
 }
 
 .motivational-phrase.dark-theme {
@@ -138,31 +144,26 @@ input.dark-theme {
 }
 
 .emoji-run-element {
-  margin: 10px auto;
   text-align: center;
-  font-size: 24px;
-  transition: 0.2s;
+  font-size: 1.25rem;
   transform: scale(-1, 1);
 }
 
 .theme-selector {
-  margin: 3% auto 2%;
   background-color: #e2e2e2;
   display: flex;
   align-self: center;
-  font-size: 14px;
+  font-size: .8rem;
   border-style: none;
   outline-style: none;
-  padding: 8px;
-  border-radius: 8px;
+  padding: .5rem;
+  border-radius: .5rem;
   cursor: pointer;
-  transition: 0.2s;
 }
 
 .theme-selector.dark-theme {
   background-color: #302f2f;
   color: gray;
-  transition: 0.2s;
 }
 
 .select-none {

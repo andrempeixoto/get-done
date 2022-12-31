@@ -1,31 +1,32 @@
-var listElement = document.querySelector('.todo-list');
-var inputElement = document.querySelector('input');
-var addButtonElement = document.querySelector('.add-todo');
+const listElement = document.querySelector('.todo-list');
+const inputElement = document.querySelector('input');
+const addButtonElement = document.querySelector('.add-todo');
 
 inputElement.focus();
 inputElement.select();
 
-var todos = JSON.parse(localStorage.getItem('list_todos')) || [];
+const todos = JSON.parse(localStorage.getItem('list_todos')) || [];
 
 function renderTodos() {
   listElement.innerHTML = '';
 
   for (todo of todos) {
-    var todoElement = document.createElement('li');
+    const todoElement = document.createElement('li');
     todoElement.classList.add('todo-element');
-    var todoText = document.createTextNode(todo + ' ');
 
-    var linkElement = document.createElement('a');
-    linkElement.setAttribute('href', '#');
-    linkElement.classList.add('link-element');
-    var linkText = document.createTextNode('✅');
-    linkElement.appendChild(linkText);
+    const todoText = document.createTextNode(todo + ' ');
 
-    var pos = todos.indexOf(todo);
-    linkElement.setAttribute('onclick', 'deleteTodo(' + pos + ')');
+    const checkElement = document.createElement('a');
+    // checkElement.setAttribute('href', '#');
+    checkElement.classList.add('check-element');
+    const checkIcon = document.createTextNode('✅');
+    checkElement.appendChild(checkIcon);
+
+    const pos = todos.indexOf(todo);
+    checkElement.setAttribute('onclick', 'deleteTodo(' + pos + ')');
 
     todoElement.appendChild(todoText);
-    todoElement.appendChild(linkElement);
+    todoElement.appendChild(checkElement);
 
     listElement.appendChild(todoElement);
   }
@@ -34,12 +35,12 @@ function renderTodos() {
 renderTodos();
 
 function addTodo() {
-  var todoText = inputElement.value;
-  if (todoText === '') {
-    return false;
-  } else {
-    todos.push(todoText);
+  const todoText = inputElement.value;
+  if (!todoText) {
+    return;
   }
+  todos.push(todoText);
+
   inputElement.value = '';
 
   renderTodos();
@@ -64,13 +65,14 @@ function deleteTodo(pos) {
 }
 
 function setDarkTheme() {
-  var body = document.querySelector('body'),
+  const body = document.querySelector('body'),
     app = document.querySelector('#app'),
     h1 = document.querySelector('.title'),
     input = document.querySelector('input'),
     motivational = document.querySelector('.motivational-phrase'),
     emojiRun = document.querySelector('.emoji-run-element'),
-    themeButtonElement = document.querySelector('.theme-selector');
+    themeButtonElement = document.querySelector('.theme-selector'),
+    addTodoButton = document.querySelector('.add-todo');
 
   body.classList.toggle('dark-theme');
   app.classList.toggle('dark-theme');
@@ -79,6 +81,7 @@ function setDarkTheme() {
   motivational.classList.toggle('dark-theme');
   emojiRun.classList.toggle('dark-theme');
   themeButtonElement.classList.toggle('dark-theme');
+  addTodoButton.classList.toggle('dark-theme');
 
   if (app.classList.contains('dark-theme')) {
     localStorage.setItem('dark-theme', 'enabled');
