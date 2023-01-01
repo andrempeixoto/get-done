@@ -73,7 +73,7 @@ body.dark-theme {
   background-color: #f0f0f0;
   border-radius: 8px;
   margin: .325rem;
-  padding: 0.5rem 0.75rem;
+  padding: 0.65rem 0.75rem;
   font-size: 18px;
   font-weight: bold;
   overflow-wrap: anywhere;
@@ -190,5 +190,23 @@ input.dark-theme {
   }
   .todo-list {
     width: 60%;
+  }
+}
+
+@media (min-width: 1000px) {
+  .input-container {
+    width: 50%;
+  }
+  .todo-list {
+    width: 50%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .input-container {
+    width: 40%;
+  }
+  .todo-list {
+    width: 40%;
   }
 }
