@@ -17,8 +17,8 @@ body.dark-theme {
   display: flex;
   flex-direction: column;
   gap: .5rem;
-  min-height: calc(100vh - 2rem);
-  padding: 1rem;
+  min-height: calc(100vh - 4rem);
+  padding: 1rem 1rem 2rem 1rem;
   align-self: center;
   background-color: white;
   transition: 0.2s;
@@ -50,11 +50,14 @@ body.dark-theme {
 }
 
 .todo-list {
+  width: 100%;
   background-color: lightgray;
+  margin-top: auto;
   margin: 0.5rem auto;
   padding: 0;
   border-radius: 8px;
   color: black;
+  transition: 0.2s;
 }
 
 .todo-list.dark-theme {
@@ -67,13 +70,13 @@ body.dark-theme {
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
-  min-width: 14rem;
   background-color: #f0f0f0;
   border-radius: 8px;
   margin: .325rem;
   padding: 0.5rem 0.75rem;
   font-size: 18px;
   font-weight: bold;
+  overflow-wrap: anywhere;
 }
 
 .check-element {
@@ -82,15 +85,18 @@ body.dark-theme {
 
 .input-container {
   display: flex;
-  justify-content: center;
+  margin: 0.5rem auto;
+  margin-top: auto;
+  width: 100%;
+  text-align: center;
 }
 
 .input-container input {
-  width: 12rem;
   padding: 0.5rem;
   text-align: center;
   border-radius: 0.5rem 0 0 0.5rem;
-  border-right: transparent;
+  border-right: none;
+  width: 100%;  
 }
 
 textarea:focus,
@@ -112,7 +118,7 @@ input.dark-theme {
   background-color: #f0f0f0;
   color: #212121;
   border-radius: 0 0.5rem 0.5rem 0;
-  padding: 0 0.5rem;
+  padding: 0.5rem 1rem;
   border-style: inset;
   border-left: none;
   cursor: pointer;
@@ -165,5 +171,24 @@ input.dark-theme {
 }
 
 .select-none {
+  margin-top: auto;
   user-select: none;
+}
+
+@media (min-width: 600px) {
+  .input-container {
+    width: 80%;
+  }
+  .todo-list {
+    width: 80%;
+  }
+}
+
+@media (min-width: 800px) {
+  .input-container {
+    width: 60%;
+  }
+  .todo-list {
+    width: 60%;
+  }
 }
